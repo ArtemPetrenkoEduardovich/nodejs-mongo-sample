@@ -1,0 +1,5 @@
+{
+  "watch": ["build"],
+  "ignore": ["docker", "log", "src"],
+  "exec": "node build/index.js"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "nodejs-mongo-sample",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Artem Petrenko",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.9.1",
+    "npm": ">=8.10.0"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "start:build": "npx tsc -w",
+    "start:run": "npx mkdirp build && nodemon",
+    "start": "concurrently npm:start:*",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.1",
+    "concurrently": "9.1.0",
+    "cors": "2.8.5",
+    "dotenv": "16.4.7",
+    "express": "4.21.2",
+    "http-status-codes": "2.3.0",
+    "log4js": "6.9.1",
+    "mongoose": "8.9.5",
+    "reflect-metadata": "0.2.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.20.0",
+    "@types/cors": "2.8.17",
+    "@types/express": "5.0.0",
+    "@types/jest": "29.5.14",
+    "@types/supertest": "6.0.2",
+    "@typescript-eslint/eslint-plugin": "8.24.1",
+    "@typescript-eslint/parser": "8.24.1",
+    "eslint": "9.20.1",
+    "eslint-plugin-jest": "28.11.0",
+    "globals": "16.0.0",
+    "jest": "29.7.0",
+    "mkdirp": "3.0.1",
+    "nodemon": "3.1.9",
+    "prettier": "3.4.2",
+    "supertest": "7.0.0",
+    "testcontainers": "10.16.0",
+    "ts-jest": "29.2.5",
+    "ts-node": "10.9.2",
+    "typescript": "5.7.2",
+    "typescript-eslint": "8.24.1"
+  }
+}
