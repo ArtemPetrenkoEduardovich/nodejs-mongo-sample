@@ -18,7 +18,7 @@ async function bootstrap(): Promise<void> {
   server.listen(PORT, HOST, async () => {
     log4js
       .getLogger()
-      .info(`🚀 Example app listening on port: ${HOST}:${PORT}`);
+      .info(`🚀 Example app listening on port: http://${HOST}:${PORT}`);
   });
 
   await connectToDatabase(MONGO_ADDRESS);
