@@ -1,12 +1,6 @@
 import * as groupService from './group.service';
 import * as groupRepository from './group.repository';
 import mongoose from 'mongoose';
-import { GroupCreateDto } from './dto/GroupCreateDto';
-import { plainToInstance } from 'class-transformer';
-import {
-  GROUP_NAME_LENGTH_LESS_THAN_2,
-  GROUP_START_YEAR_LESS_THAN_2020,
-} from './group.errorCodes';
 
 describe('Group Service', () => {
   describe('list', () => {

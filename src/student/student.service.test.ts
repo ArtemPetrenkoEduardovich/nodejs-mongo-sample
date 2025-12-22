@@ -1,4 +1,3 @@
-import { StudentData } from './student.model';
 import * as studentService from './student.service';
 import * as studentRepository from './student.repository';
 import * as groupService from '../group/group.service';
@@ -7,6 +6,7 @@ import { plainToInstance } from 'class-transformer';
 import { StudentCreateDto } from './dto/StudentCreateDto';
 import { StudentUpdateDto } from './dto/StudentUpdateDto';
 import { StudentQueryDto } from './dto/query/StudentQueryDto';
+import { NotFoundException } from '../exceptions/NotFoundException';
 
 describe('Student Service', () => {
   describe('get', () => {
@@ -26,11 +26,11 @@ describe('Student Service', () => {
       expect(student.birthDate).toEqual(studentFound.birthDate);
     });
     test('should throw NotFoundException', async () => {
-      const studentId = new mongoose.Types.ObjectId();
+      const studentId = new mongoose.Types.ObjectId().toString();
       jest.spyOn(studentRepository, 'get').mockResolvedValueOnce(null);
-      await expect(studentService.get(studentId.toString())).rejects.toThrow(
-        `Student with id ${studentId} not found.`,
-      );
+      await expect(studentService.get(studentId))
+        .rejects.toThrow(NotFoundException);
+      expect(studentRepository.get).toHaveBeenCalledWith(studentId);
     });
     test('should throw invalid id', async () => {
       await expect(studentService.get('invalidId')).rejects.toMatchObject({

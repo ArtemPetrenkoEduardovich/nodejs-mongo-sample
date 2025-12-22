@@ -1,4 +1,4 @@
-import request from 'supertest';
+import request = require('supertest');
 import mongoose from 'mongoose';
 import app from '../app';
 import * as studentService from './student.service';
