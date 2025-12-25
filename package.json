@@ -14,7 +14,7 @@
     "dev": "tsx watch src/index.ts",
     "test": "jest",
     "coverage": "jest --coverage",
-    "lint": "eslint 'src/**/*.ts' --fix",
+    "lint": "eslint src/**/*.ts --fix",
     "format": "prettier --write \"src/**/*.ts\""
   },
   "dependencies": {
