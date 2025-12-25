@@ -10,9 +10,8 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "start:build": "npx tsc -w",
-    "start:run": "npx mkdirp build && nodemon",
-    "start": "concurrently npm:start:*",
+    "start": "node build/index.js",
+    "dev": "tsx watch src/index.ts",
     "test": "jest",
     "coverage": "jest --coverage",
     "lint": "eslint 'src/**/*.ts' --fix",
@@ -42,12 +41,11 @@
     "eslint-plugin-jest": "28.11.0",
     "globals": "16.0.0",
     "jest": "29.7.0",
-    "mkdirp": "3.0.1",
-    "nodemon": "3.1.9",
     "prettier": "3.4.2",
     "supertest": "7.0.0",
     "testcontainers": "10.28.0",
     "ts-jest": "29.2.5",
+    "tsx": "4.21.0",
     "typescript": "5.7.2",
     "typescript-eslint": "8.24.1"
   }
